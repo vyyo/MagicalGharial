@@ -1,35 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.InputSystem;
-using UnityEngine.Animations;
 
 public class BubbleContainer : MonoBehaviour
 {
-    private float speed;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float upSpeed = 1;
     [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] Animator animator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        /*
-            when space is pressed
-            burst event
-            Destroy(gameObject, 0.1f);
-        */
+        if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (-moveSpeed * Time.deltaTime, 0);
+        }
+        else if(Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (moveSpeed * Time.deltaTime, 0);
+        }
+        MoveUp();
+    }
+
+    void MoveUp()
+    {
+        transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (0, upSpeed * Time.deltaTime);
     }
 
     public void FillContainer(Bubble bubble)
     {
-        speed = bubble.speed;
-
+        moveSpeed = bubble.speed;
         spriteRenderer.sprite = bubble.bubbleSprite;
-        //animator.runtimeAnimatorController = bubble.animations as RuntimeAnimatorController;
-        //animator.SetFloat("Resistance", resistance);
 
 
         //collision setup

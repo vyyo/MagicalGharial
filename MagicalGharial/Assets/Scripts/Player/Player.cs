@@ -4,20 +4,16 @@ using AYellowpaper.SerializedCollections;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    PlayerControls controls;
-
     //Move
     Vector2 move;
     [SerializeField] float moveSpeed = 3;
-    [SerializeField] float upSpeed = 2;
     //Combo Sequence Vars
     [SerializeField] float comboResetTimer = 1;
     float comboTimer;
-    [SerializeField] int maxComboSize = 6;
+    [SerializeField] int maxComboSize = 5;
     [SerializedDictionary("Combo Name", "Combo")] public SerializedDictionary<Bubble, List<ComboSymbols>> combos;
     private List<ComboSymbols> currentComboSequence = new List<ComboSymbols>();
     BubbleContainer bubbleContainer;
@@ -32,20 +28,27 @@ public class Player : MonoBehaviour
         comboTimer = comboResetTimer;
 
         bubbleContainer = GetComponent<BubbleContainer>();
-        controls = new PlayerControls();
 
-        controls.BubbleMap.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.BubbleMap.Move.canceled += ctx => move = Vector2.zero;
+        //controls.BubbleMap.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
+        //controls.BubbleMap.Move.canceled += ctx => move = Vector2.zero;
 
-        controls.BubbleMap.Circle.performed += ctx => UpdateCombo(ComboSymbols.Circle);
-        controls.BubbleMap.Rectangle.performed += ctx => UpdateCombo(ComboSymbols.Rectangle);
-        controls.BubbleMap.Triangle.performed += ctx => UpdateCombo(ComboSymbols.Triangle);
-
-        controls.BubbleMap.Pop.performed += ctx => pop = true;
+        //controls.BubbleMap.Pop.performed += ctx => pop = true;
     }
 
     private void FixedUpdate()
     {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            UpdateCombo(ComboSymbols.Circle);
+        }
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            UpdateCombo(ComboSymbols.Rectangle);
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            UpdateCombo(ComboSymbols.Triangle);
+        }
         if (currentComboSequence.Count > 0)
         {
             comboTimer -= Time.deltaTime;
@@ -93,7 +96,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //Move();
+        Move();
     }
 
     void FoundCombo(Bubble bubble)
@@ -104,19 +107,8 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2(move.x * Time.deltaTime * moveSpeed, upSpeed * Time.deltaTime);
+        transform.position = new Vector2 (transform.position.x, transform.position.y) + (move * moveSpeed * Time.deltaTime);
     }
-
-    void OnEnable()
-    {
-        controls.BubbleMap.Enable();
-    }
-
-    void OnDisable()
-    {
-        controls.BubbleMap.Disable();
-    }
-
     public enum ComboSymbols
     {
         Circle = 1,
