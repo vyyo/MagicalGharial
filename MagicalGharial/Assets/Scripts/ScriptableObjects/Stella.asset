@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37c4c5f73fb873b48b1709d429de0830, type: 3}
-  m_Name: Club
+  m_Name: Stella
   m_EditorClassIdentifier: 
-  bubbleSprite: {fileID: 21300000, guid: ad61cd5e45642e649a93753c2ad9ceb6, type: 3}
-  collisionSprite: {fileID: 21300000, guid: 6c62890518847f945b893e0a043a075d, type: 3}
+  bubbleSprite: {fileID: 21300000, guid: aab088f3d57610f48a748bc3224de43b, type: 3}
+  collisionSprite: {fileID: 21300000, guid: fe4429052160c784492c8f7830fdff28, type: 3}
   speed: 1

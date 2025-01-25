@@ -47,11 +47,11 @@ public class Player : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.W))
             {
-                UpdateCombo(ComboSymbols.Rectangle);
+                UpdateCombo(ComboSymbols.Triangle);
             }
             if(Input.GetKeyDown(KeyCode.E))
             {
-                UpdateCombo(ComboSymbols.Triangle);
+                UpdateCombo(ComboSymbols.Rectangle);
             }
 
             if (currentComboSequence.Count > 0)
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
     public enum ComboSymbols
     {
         Circle = 0,
-        Rectangle = 1,
-        Triangle = 2
+        Triangle = 1,
+        Rectangle = 2
     }
 }
