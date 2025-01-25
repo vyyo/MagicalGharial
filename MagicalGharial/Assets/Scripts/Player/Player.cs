@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
     private List<ComboSymbols> currentComboSequence = new List<ComboSymbols>();
     [SerializeField] GameObject bubbleSpawn;
     [SerializeField] GameObject bubblePrefab;
-    //BubbleContainer bubbleContainer;
+    GameObject currentBubble;
 
     //Pop Vars
-    bool pop = false;
+    public bool canMove = true;
 
     public BubbleContainer target;
 
@@ -39,31 +39,42 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(canMove)
         {
-            UpdateCombo(ComboSymbols.Circle);
-        }
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            UpdateCombo(ComboSymbols.Rectangle);
-        }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            UpdateCombo(ComboSymbols.Triangle);
-        }
-
-        if (currentComboSequence.Count > 0)
-        {
-            comboTimer -= Time.deltaTime;
-            if(comboTimer <= 0)
+            if(Input.GetKeyDown(KeyCode.Q))
             {
-                currentComboSequence.Clear();
-                Debug.Log("combo reset");
+                UpdateCombo(ComboSymbols.Circle);
+            }
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                UpdateCombo(ComboSymbols.Rectangle);
+            }
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                UpdateCombo(ComboSymbols.Triangle);
+            }
+
+            if (currentComboSequence.Count > 0)
+            {
+                comboTimer -= Time.deltaTime;
+                if(comboTimer <= 0)
+                {
+                    currentComboSequence.Clear();
+                    Debug.Log("combo reset");
+                }
+            }
+            else
+            {
+                comboTimer = comboResetTimer;
             }
         }
         else
         {
-            comboTimer = comboResetTimer;
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                currentBubble.GetComponent<BubbleContainer>().Pop();
+                canMove = true;
+            }
         }
     }
 
@@ -71,7 +82,7 @@ public class Player : MonoBehaviour
     {
         currentComboSequence.Add(newComboSymbol);
         comboTimer = comboResetTimer;
-        Debug.Log(newComboSymbol);
+        //Debug.Log(newComboSymbol);
         /*foreach (ComboSymbols symbol in currentComboSequence)
         {
             Debug.Log(symbol);
@@ -103,8 +114,9 @@ public class Player : MonoBehaviour
         var newBubble = Instantiate(bubblePrefab, bubbleSpawn.transform.position, bubbleSpawn.transform.rotation);
         newBubble.GetComponent<BubbleContainer>().FillContainer(bubble);
         currentComboSequence.Clear();
+        currentBubble = newBubble;
+        canMove = false;
     }
-
     void Move()
     {
         transform.position = new Vector2 (transform.position.x, transform.position.y) + (move * moveSpeed * Time.deltaTime);

@@ -7,7 +7,7 @@ public class BubbleContainer : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float upSpeed = 1;
     [SerializeField] SpriteRenderer spriteRenderer;
-    
+
     void Update()
     {
         if(Input.GetKey(KeyCode.LeftArrow))
@@ -36,5 +36,10 @@ public class BubbleContainer : MonoBehaviour
         gameObject.AddComponent<PolygonCollider2D>();
         gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
         gameObject.GetComponent<PolygonCollider2D>().useDelaunayMesh = true;
+    }
+
+    public void Pop()
+    {
+        Destroy(gameObject, 0.1f);
     }
 }
