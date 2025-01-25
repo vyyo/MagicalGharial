@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField] int maxComboSize = 5;
     [SerializedDictionary("Combo Name", "Combo")] public SerializedDictionary<Bubble, List<ComboSymbols>> combos;
     private List<ComboSymbols> currentComboSequence = new List<ComboSymbols>();
-    BubbleContainer bubbleContainer;
+    [SerializeField] GameObject bubbleSpawn;
+    [SerializeField] GameObject bubblePrefab;
+    //BubbleContainer bubbleContainer;
 
     //Pop Vars
     bool pop = false;
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
     {
         comboTimer = comboResetTimer;
 
-        bubbleContainer = GetComponent<BubbleContainer>();
+        //bubbleContainer = GetComponent<BubbleContainer>();
 
         //controls.BubbleMap.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         //controls.BubbleMap.Move.canceled += ctx => move = Vector2.zero;
@@ -35,7 +37,7 @@ public class Player : MonoBehaviour
         //controls.BubbleMap.Pop.performed += ctx => pop = true;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
         {
             UpdateCombo(ComboSymbols.Triangle);
         }
+
         if (currentComboSequence.Count > 0)
         {
             comboTimer -= Time.deltaTime;
@@ -68,7 +71,7 @@ public class Player : MonoBehaviour
     {
         currentComboSequence.Add(newComboSymbol);
         comboTimer = comboResetTimer;
-        Debug.Log(currentComboSequence);
+        Debug.Log(newComboSymbol);
         /*foreach (ComboSymbols symbol in currentComboSequence)
         {
             Debug.Log(symbol);
@@ -86,23 +89,20 @@ public class Player : MonoBehaviour
                 {
                     FoundCombo(combo.Key);
                 }
-                else
-                {
-                    Debug.Log("gwegerg");
-                }
             }
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
 
     void FoundCombo(Bubble bubble)
     {
-        bubbleContainer.FillContainer(bubble);
-        Debug.Log(bubble);
+        var newBubble = Instantiate(bubblePrefab, bubbleSpawn.transform.position, bubbleSpawn.transform.rotation);
+        newBubble.GetComponent<BubbleContainer>().FillContainer(bubble);
+        currentComboSequence.Clear();
     }
 
     void Move()
