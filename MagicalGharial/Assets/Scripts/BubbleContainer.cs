@@ -29,13 +29,15 @@ public class BubbleContainer : MonoBehaviour
     public void FillContainer(Bubble bubble)
     {
         moveSpeed = bubble.speed;
-        spriteRenderer.sprite = bubble.bubbleSprite;
+        spriteRenderer.sprite = bubble.collisionSprite;
 
 
         //collision setup
         gameObject.AddComponent<PolygonCollider2D>();
         gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
         gameObject.GetComponent<PolygonCollider2D>().useDelaunayMesh = true;
+
+        spriteRenderer.sprite = bubble.bubbleSprite;
     }
 
     public void Pop()

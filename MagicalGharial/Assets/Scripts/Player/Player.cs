@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     float comboTimer;
     [SerializeField] int maxComboSize = 5;
     [SerializedDictionary("Combo Name", "Combo")] public SerializedDictionary<Bubble, List<ComboSymbols>> combos;
-    private List<ComboSymbols> currentComboSequence = new List<ComboSymbols>();
+    [HideInInspector] public List<ComboSymbols> currentComboSequence = new List<ComboSymbols>();
     [SerializeField] GameObject bubbleSpawn;
     [SerializeField] GameObject bubblePrefab;
     GameObject currentBubble;
@@ -123,8 +123,8 @@ public class Player : MonoBehaviour
     }
     public enum ComboSymbols
     {
-        Circle = 1,
-        Rectangle = 2,
-        Triangle = 3
+        Circle = 0,
+        Rectangle = 1,
+        Triangle = 2
     }
 }

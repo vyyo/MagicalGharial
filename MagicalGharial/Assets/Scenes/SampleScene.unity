@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 795844341}
   - component: {fileID: 795844340}
   m_Layer: 0
-  m_Name: Rettangolo (1)
+  m_Name: Bubble4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,7 +411,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4c5ca0263ef38654480dfbfd329af312, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -419,7 +419,7 @@ SpriteRenderer:
   m_Size: {x: 33.329998, y: 33.329998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &795844341
@@ -430,12 +430,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795844339}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.67, y: -1.0899999, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139570671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927611095
 GameObject:
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 927611097}
   - component: {fileID: 927611096}
   m_Layer: 0
-  m_Name: Rettangolo
+  m_Name: Bubble2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +495,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4c5ca0263ef38654480dfbfd329af312, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -503,7 +503,7 @@ SpriteRenderer:
   m_Size: {x: 33.329998, y: 33.329998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &927611097
@@ -514,12 +514,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927611095}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: -1.04, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139570671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022867281
 GameObject:
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1022867283}
   - component: {fileID: 1022867282}
   m_Layer: 0
-  m_Name: Cerchio
+  m_Name: Bubble1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -579,7 +579,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf013c1d0b29db442a8450160440b78c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -587,7 +587,7 @@ SpriteRenderer:
   m_Size: {x: 36, y: 36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1022867283
@@ -598,12 +598,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022867281}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.04, y: -2.23, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139570671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1352272231
 PrefabInstance:
@@ -613,17 +613,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[0].Value.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[0].Value.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[0].Value.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[1].Value.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[1].Value.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[1].Value.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544683806960716175, guid: f16c7544968911f449573ee77835349b, type: 3}
+      propertyPath: combos._serializedList.Array.data[1].Value.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7465138502236829302, guid: f16c7544968911f449573ee77835349b, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7472422008422036125, guid: f16c7544968911f449573ee77835349b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7472422008422036125, guid: f16c7544968911f449573ee77835349b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.563
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7472422008422036125, guid: f16c7544968911f449573ee77835349b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -673,7 +701,7 @@ GameObject:
   - component: {fileID: 1509074810}
   - component: {fileID: 1509074809}
   m_Layer: 0
-  m_Name: Triangolo
+  m_Name: Bubble3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,7 +748,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13b7477fface39d44a3e012fb5a49cb5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -728,7 +756,7 @@ SpriteRenderer:
   m_Size: {x: 33.329998, y: 33.329998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1509074810
@@ -739,12 +767,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509074808}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.26, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139570671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1894913872
 GameObject:
@@ -757,7 +785,7 @@ GameObject:
   - component: {fileID: 1894913874}
   - component: {fileID: 1894913873}
   m_Layer: 0
-  m_Name: Cerchio (1)
+  m_Name: Bubble5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,7 +832,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf013c1d0b29db442a8450160440b78c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -812,7 +840,7 @@ SpriteRenderer:
   m_Size: {x: 36, y: 36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1894913874
@@ -823,13 +851,73 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894913872}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.52, y: -2.29, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 2139570671}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2139570670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139570671}
+  - component: {fileID: 2139570672}
+  m_Layer: 0
+  m_Name: ComboHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2139570671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139570670}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1022867283}
+  - {fileID: 927611097}
+  - {fileID: 1509074810}
+  - {fileID: 795844341}
+  - {fileID: 1894913874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2139570672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139570670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b3016c9d64aa241bfec1114d4e3377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 412020881}
+  comboSprites:
+  - {fileID: 1022867282}
+  - {fileID: 927611096}
+  - {fileID: 1509074809}
+  - {fileID: 795844340}
+  - {fileID: 1894913873}
+  comboBubbles:
+  - {fileID: 21300000, guid: bf013c1d0b29db442a8450160440b78c, type: 3}
+  - {fileID: 21300000, guid: 4c5ca0263ef38654480dfbfd329af312, type: 3}
+  - {fileID: 21300000, guid: 13b7477fface39d44a3e012fb5a49cb5, type: 3}
 --- !u!1001 &7842329962906476015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,8 +987,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1352272231}
   - {fileID: 7842329962906476015}
-  - {fileID: 1022867283}
-  - {fileID: 1894913874}
-  - {fileID: 795844341}
-  - {fileID: 927611097}
-  - {fileID: 1509074810}
+  - {fileID: 2139570671}
