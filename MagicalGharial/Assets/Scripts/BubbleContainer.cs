@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BubbleContainer : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
-    [SerializeField] float upSpeed = 1;
+    float moveSpeed = 1;
+    float upSpeed = 1;
     [SerializeField] SpriteRenderer spriteRenderer;
 
     void Update()
@@ -28,7 +28,8 @@ public class BubbleContainer : MonoBehaviour
 
     public void FillContainer(Bubble bubble)
     {
-        moveSpeed = bubble.speed;
+        moveSpeed = bubble.moveSpeed;
+        upSpeed = bubble.upSpeed;
         spriteRenderer.sprite = bubble.collisionSprite;
 
 

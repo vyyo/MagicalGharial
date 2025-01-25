@@ -8,7 +8,8 @@ public class Bubble : ScriptableObject
     //public BubbleType[] bubbleSequence;
     public Sprite bubbleSprite;
     public Sprite collisionSprite;
-    public float speed = 1;
+    public float moveSpeed = 1;
+    public float upSpeed = 1;
     //public RuntimeAnimatorController animations;
 
     public enum BubbleType
