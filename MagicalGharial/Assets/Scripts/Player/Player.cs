@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Animation Vars
+    Animator animator;
     //Move
     Vector2 move;
     [SerializeField] float moveSpeed = 3;
@@ -27,20 +29,16 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
+
         comboTimer = comboResetTimer;
-
-        //bubbleContainer = GetComponent<BubbleContainer>();
-
-        //controls.BubbleMap.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        //controls.BubbleMap.Move.canceled += ctx => move = Vector2.zero;
-
-        //controls.BubbleMap.Pop.performed += ctx => pop = true;
     }
 
     private void Update()
     {
         if(canMove)
         {
+            animator.Play("player_dance");
             if(Input.GetKeyDown(KeyCode.Q))
             {
                 UpdateCombo(ComboSymbols.Circle);
@@ -70,6 +68,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            animator.Play("player_idle");
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 currentBubble.GetComponent<BubbleContainer>().Pop();

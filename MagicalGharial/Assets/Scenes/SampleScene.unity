@@ -1056,8 +1056,8 @@ MonoBehaviour:
   - {fileID: 1894913873}
   comboBubbles:
   - {fileID: 21300000, guid: bf013c1d0b29db442a8450160440b78c, type: 3}
-  - {fileID: 21300000, guid: 4c5ca0263ef38654480dfbfd329af312, type: 3}
   - {fileID: 21300000, guid: 13b7477fface39d44a3e012fb5a49cb5, type: 3}
+  - {fileID: 21300000, guid: 4c5ca0263ef38654480dfbfd329af312, type: 3}
 --- !u!1001 &7842329962906476015
 PrefabInstance:
   m_ObjectHideFlags: 0
