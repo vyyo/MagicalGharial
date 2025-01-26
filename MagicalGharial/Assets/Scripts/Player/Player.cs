@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public bool canMove = true;
     //fase change vars
     public bool walking = false;
+    public bool hasSnacked = false;
 
     public BubbleContainer target;
 

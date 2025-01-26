@@ -21,7 +21,14 @@ public class PhaseSwapTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(player.hasSnacked)
+        {
+            player.hasSnacked = false;
+            remainingTime = phaseDuration;
+            player.walking = false;
+            player.transform.position = bubblePos.transform.position;
+            player.transform.rotation = bubblePos.transform.rotation;
+        }
         if (remainingTime <= 0)
         {
             remainingTime = phaseDuration;

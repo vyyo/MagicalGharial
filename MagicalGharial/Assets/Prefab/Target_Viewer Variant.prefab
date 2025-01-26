@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1501661738543765244, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
+      propertyPath: hater
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010943048718413745, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
       propertyPath: m_Name
       value: Target_Viewer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536757191766380086, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.9683333
       objectReference: {fileID: 0}
     - target: {fileID: 4610884249885123884, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0d15cec2a25b3014389f5553eab9aef4, type: 2}
+    - target: {fileID: 6329343302537544223, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c8931f94574e9be4cbedb3f9f4c23343, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

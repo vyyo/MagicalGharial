@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fan : MonoBehaviour
@@ -16,9 +17,16 @@ public class Fan : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    [SerializeField] bool hater = false;
+
     void Awake()
     {
         dryingTimer = dryingTime;
+        if(hater)
+        {
+            maxWetness = 0;
+            currentWetness = 0;
+        }
     }
 
     void OnEnable()
@@ -62,6 +70,12 @@ public class Fan : MonoBehaviour
             underBubble = true;
             //bubbleWetness = other.BubbleContainer.bubbleWetness;
         }
+        if(other.CompareTag("Player") && hater)
+        {
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            other.gameObject.GetComponentInParent<Player>().hasSnacked = true;
+            Destroy(gameObject, 0.1f);
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
@@ -73,20 +87,24 @@ public class Fan : MonoBehaviour
 
     void UpdateAnimation()
     {
-        switch(currentWetness)
+        if(hater == false)
         {
-            case 0:
-                animator.Play("viewer_displeased");
-                break;
-            case 1:
-                animator.Play("viewer_neutral");
-                break;
-            case 2:
-                animator.Play("viewer_amused");
-                break;
-            case 3:
-                animator.Play("viewer_elated");
-                break;
+            switch(currentWetness)
+            {
+                case 0:
+                    animator.Play("viewer_displeased");
+                    break;
+                case 1:
+                    animator.Play("viewer_neutral");
+                    break;
+                case 2:
+                    animator.Play("viewer_amused");
+                    break;
+                case 3:
+                    animator.Play("viewer_elated");
+                    break;
+            }
         }
+
     }
 }
