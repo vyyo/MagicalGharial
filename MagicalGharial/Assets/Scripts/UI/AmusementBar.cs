@@ -38,8 +38,8 @@ public class AmusementBar : MonoBehaviour
         UpdateBar();
         if(slider.value < minEntertainment)
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
+            //gameover scene
+            SceneManager.LoadScene(3);
         }
     }
 
