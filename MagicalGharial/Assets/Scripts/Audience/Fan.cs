@@ -29,6 +29,7 @@ public class Fan : MonoBehaviour
             maxWetness = 0;
             currentWetness = 0;
         }
+        UpdateAnimation();
     }
 
     void OnEnable()
@@ -113,6 +114,10 @@ public class Fan : MonoBehaviour
                     animator.Play("viewer_elated");
                     break;
             }
+        }
+        else
+        {
+            animator.Play("viewer_target");
         }
 
     }

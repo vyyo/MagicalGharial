@@ -1267,6 +1267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1063408794}
     m_Modifications:
+    - target: {fileID: 1501661738543765244, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
+      propertyPath: hater
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010943048718413745, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
       propertyPath: m_Name
       value: Viewer (8)
