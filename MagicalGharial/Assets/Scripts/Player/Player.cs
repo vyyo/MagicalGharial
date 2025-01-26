@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         comboTimer = comboResetTimer;
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
