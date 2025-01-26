@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleSprite: {fileID: 21300000, guid: b5d26b58ba520c14f9000226e743dbbb, type: 3}
   collisionSprite: {fileID: 21300000, guid: b6bebb5fdbaeb1c4f866bf1f22e6ad6f, type: 3}
-  speed: 1
+  moveSpeed: 4
+  upSpeed: 3
