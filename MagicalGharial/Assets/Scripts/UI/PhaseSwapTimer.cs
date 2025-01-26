@@ -42,6 +42,10 @@ public class PhaseSwapTimer : MonoBehaviour
             else
             {
                 player.transform.position = walkPos.transform.position;
+                if(player.canMove == false)
+                {
+                    player.PopCall();
+                }
             }
         }
         else

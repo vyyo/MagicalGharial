@@ -163,4 +163,11 @@ public class Player : MonoBehaviour
         Triangle = 1,
         Rectangle = 2
     }
+    public void PopCall()
+    {
+        currentBubble.GetComponent<BubbleContainer>().Pop();
+        OnPopped?.Invoke();
+        canMove = true;
+        audioManager.PlaySfx(audioClip);
+    }
 }
