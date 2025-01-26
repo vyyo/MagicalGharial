@@ -2897,7 +2897,7 @@ Transform:
   m_GameObject: {fileID: 854245525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4697,17 +4697,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5309243744360720888, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
+      propertyPath: cartSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5319555896069101496, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
       propertyPath: m_Name
       value: Cart
       objectReference: {fileID: 0}
+    - target: {fileID: 7370108202330372292, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8237322219572704185, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.87
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8237322219572704185, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.46
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 8237322219572704185, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4740,6 +4748,10 @@ PrefabInstance:
     - target: {fileID: 8237322219572704185, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488808690459761204, guid: 5a721c49601c3f5479e52c949bf7b58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
