@@ -9,6 +9,7 @@ public class HaterManager : MonoBehaviour
     [SerializeField] int hatersTotal;
     int hatersEaten;
     List<Fan> fans = new List<Fan>();
+    [SerializeField] PhaseSwapTimer phaseSwapTimer;
     void Awake()
     {
         PopulateFans();
@@ -44,6 +45,7 @@ public class HaterManager : MonoBehaviour
         int randomFan = Random.Range(0, fans.Count);
         fans[randomFan].hater = true;
         fans[randomFan].UpdateAnimation();
+        phaseSwapTimer.ForceBubble();
     }
 
     void PopulateFans()

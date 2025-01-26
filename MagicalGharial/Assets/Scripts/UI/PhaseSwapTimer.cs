@@ -26,10 +26,9 @@ public class PhaseSwapTimer : MonoBehaviour
     {
         if(player.hasSnacked)
         {
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             //player.hasSnacked = false;
-            currentPhaseDuration = bubblePhaseDuration;
-            remainingTime = currentPhaseDuration;
-            player.walking = false;
+            remainingTime = 0;
             player.transform.position = bubblePos.transform.position;
             player.transform.rotation = bubblePos.transform.rotation;
         }
@@ -59,5 +58,18 @@ public class PhaseSwapTimer : MonoBehaviour
             remainingTime -= Time.deltaTime;
         }
         timerImage.fillAmount = remainingTime/currentPhaseDuration;
+    }
+
+    public void ForceBubble()
+    {
+        player.currentComboSequence.Clear();
+        player.walking = false;
+        if(player.walking == false)
+            {
+                currentPhaseDuration = bubblePhaseDuration;
+                player.transform.position = bubblePos.transform.position;
+                player.transform.rotation = bubblePos.transform.rotation;
+            }
+        remainingTime = currentPhaseDuration;
     }
 }

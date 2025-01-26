@@ -3614,6 +3614,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4610884249885123884, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
   m_PrefabInstance: {fileID: 1166202071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177400707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3003917366259384927, guid: 81538ede39b058241bd834cc1a01784e, type: 3}
+  m_PrefabInstance: {fileID: 1153456244461176466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c7ca55cdfbbba438b76b2eef89bf7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1212362086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610884249885123884, guid: 22fd2d86ea453c64a89fe23bece5f3a9, type: 3}
@@ -6143,6 +6154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 412020881}
   hatersTotal: 3
+  phaseSwapTimer: {fileID: 1177400707}
 --- !u!1001 &1153456244461176466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6163,6 +6175,10 @@ PrefabInstance:
       propertyPath: bubblePos
       value: 
       objectReference: {fileID: 1932576044}
+    - target: {fileID: 3003917366259384927, guid: 81538ede39b058241bd834cc1a01784e, type: 3}
+      propertyPath: snackPhaseDuration
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5913843980215165093, guid: 81538ede39b058241bd834cc1a01784e, type: 3}
       propertyPath: m_Name
       value: PhaseSwapTimer
