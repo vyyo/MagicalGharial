@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 9143083039907249357}
   - component: {fileID: 7696216541222742622}
   - component: {fileID: 1627965916514239467}
-  - component: {fileID: 3003917366259384927}
+  - component: {fileID: 3428601186319925543}
   m_Layer: 5
-  m_Name: PhaseSwapTimer
+  m_Name: GameTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3003917366259384927
+--- !u!114 &3428601186319925543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,12 +85,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5913843980215165093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28c7ca55cdfbbba438b76b2eef89bf7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 54746a1eaf41f2340b22aa928811fe51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePhaseDuration: 20
-  snackPhaseDuration: 5
+  gameDuration: 96
   timerImage: {fileID: 1627965916514239467}
   player: {fileID: 0}
-  bubblePos: {fileID: 0}
-  walkPos: {fileID: 0}
