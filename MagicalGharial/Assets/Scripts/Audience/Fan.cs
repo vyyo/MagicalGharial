@@ -8,7 +8,7 @@ public class Fan : MonoBehaviour
     bool underBubble = false;
 
     int maxWetness = 3;
-    int currentWetness = 1;
+    public int currentWetness = 1;
     int bubbleWetness = 3;
 
     [SerializeField] float dryingTime = 10;
@@ -41,7 +41,6 @@ public class Fan : MonoBehaviour
         {
             currentWetness = Mathf.Clamp(currentWetness - 1, 0, maxWetness);
             dryingTimer = dryingTime;
-            Debug.Log("Dry" + currentWetness);
             UpdateAnimation();
         }
     }
@@ -52,7 +51,6 @@ public class Fan : MonoBehaviour
         {
             currentWetness = Mathf.Clamp(currentWetness + bubbleWetness, 0, maxWetness);
             dryingTimer = dryingTime;
-            Debug.Log("Wet" + currentWetness);
             UpdateAnimation();
         }
     }

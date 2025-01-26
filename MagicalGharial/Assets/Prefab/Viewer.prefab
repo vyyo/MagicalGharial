@@ -193,5 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52c68d32fc0418448f05b637f5193f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dryingTime: 5
+  dryingTime: 10
   animator: {fileID: 5530344997455149425}
