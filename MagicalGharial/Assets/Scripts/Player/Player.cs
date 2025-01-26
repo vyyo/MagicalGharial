@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip audioClip;
     //Animation Vars
     Animator animator;
     //Move
@@ -73,6 +75,7 @@ public class Player : MonoBehaviour
             {
                 currentBubble.GetComponent<BubbleContainer>().Pop();
                 canMove = true;
+                audioManager.PlaySfx(audioClip);
             }
         }
     }

@@ -51,7 +51,8 @@ MonoBehaviour:
   - {fileID: 7730306679030953869}
   _ostMixerGroup: {fileID: -1644374999384046252, guid: 583f4f1aebe521c43a2aa33e239e4ae0, type: 2}
   _fadeTime: 1
-  _canzoni: []
+  _canzoni:
+  - {fileID: 8300000, guid: e89b1b88acf4b61418f740076ee24e8b, type: 3}
   _sfxAudioSources: []
   _sfxMixerGroup: {fileID: -2895304808826128557, guid: 583f4f1aebe521c43a2aa33e239e4ae0, type: 2}
   _sfxChannels: 5
@@ -98,8 +99,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1644374999384046252, guid: 583f4f1aebe521c43a2aa33e239e4ae0, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: e89b1b88acf4b61418f740076ee24e8b, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1

@@ -490,6 +490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebeb28f4b0503c04fb6ab02fd31a198b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: c70f8437d5bf6d742b61ddf3749def37, type: 3}
   moveSpeed: 3
   comboResetTimer: 1
   maxComboSize: 5
