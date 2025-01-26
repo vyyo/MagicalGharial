@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     GameObject currentBubble;
 
     //Pop Vars
+    public delegate void PopAction();
+    public static event PopAction OnPopped;
     public bool canMove = true;
 
     public BubbleContainer target;
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 currentBubble.GetComponent<BubbleContainer>().Pop();
+                OnPopped?.Invoke();
                 canMove = true;
                 audioManager.PlaySfx(audioClip);
             }

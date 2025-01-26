@@ -29,7 +29,7 @@ public class ComboHolder : MonoBehaviour
             {
                 int value = (int)symbol;
                 comboValues.Add((int)symbol);
-                Debug.Log(value);
+                //Debug.Log(value);
             }
             for (int i = 0; i < comboSprites.Length; i++)
             {

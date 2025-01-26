@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 4610884249885123884}
   - component: {fileID: 6329343302537544223}
   - component: {fileID: 4536757191766380086}
+  - component: {fileID: 5681106521371346545}
   - component: {fileID: 5530344997455149425}
+  - component: {fileID: 1501661738543765244}
   m_Layer: 0
   m_Name: Viewer
   m_TagString: Untagged
@@ -131,6 +133,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67833334, y: 0.975}
   m_EdgeRadius: 0
+--- !u!50 &5681106521371346545
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010943048718413745}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &5530344997455149425
 Animator:
   serializedVersion: 5
@@ -152,3 +181,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1501661738543765244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010943048718413745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52c68d32fc0418448f05b637f5193f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dryingTime: 5
+  animator: {fileID: 5530344997455149425}
