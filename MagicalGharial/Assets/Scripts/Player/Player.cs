@@ -4,6 +4,7 @@ using AYellowpaper.SerializedCollections;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
     public delegate void PopAction();
     public static event PopAction OnPopped;
     public bool canMove = true;
+    //fase change vars
+    public bool walking = false;
 
     public BubbleContainer target;
 
@@ -40,45 +43,72 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(canMove)
+        if(walking == false)
         {
-            animator.Play("player_dance");
-            if(Input.GetKeyDown(KeyCode.Q))
+            if(canMove)
             {
-                UpdateCombo(ComboSymbols.Circle);
-            }
-            if(Input.GetKeyDown(KeyCode.W))
-            {
-                UpdateCombo(ComboSymbols.Triangle);
-            }
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                UpdateCombo(ComboSymbols.Rectangle);
-            }
-
-            if (currentComboSequence.Count > 0)
-            {
-                comboTimer -= Time.deltaTime;
-                if(comboTimer <= 0)
+                animator.Play("player_dance");
+                if(Input.GetKeyDown(KeyCode.Q))
                 {
-                    currentComboSequence.Clear();
-                    Debug.Log("combo reset");
+                    UpdateCombo(ComboSymbols.Circle);
+                }
+                if(Input.GetKeyDown(KeyCode.W))
+                {
+                    UpdateCombo(ComboSymbols.Triangle);
+                }
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    UpdateCombo(ComboSymbols.Rectangle);
+                }
+
+                if (currentComboSequence.Count > 0)
+                {
+                    comboTimer -= Time.deltaTime;
+                    if(comboTimer <= 0)
+                    {
+                        currentComboSequence.Clear();
+                        Debug.Log("combo reset");
+                    }
+                }
+                else
+                {
+                    comboTimer = comboResetTimer;
                 }
             }
             else
             {
-                comboTimer = comboResetTimer;
+                animator.Play("player_idle");
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    currentBubble.GetComponent<BubbleContainer>().Pop();
+                    OnPopped?.Invoke();
+                    canMove = true;
+                    audioManager.PlaySfx(audioClip);
+                }
             }
         }
         else
         {
-            animator.Play("player_idle");
-            if(Input.GetKeyDown(KeyCode.Space))
+            animator.Play("player_snackwalk");
+            if(Input.GetKey(KeyCode.LeftArrow))
             {
-                currentBubble.GetComponent<BubbleContainer>().Pop();
-                OnPopped?.Invoke();
-                canMove = true;
-                audioManager.PlaySfx(audioClip);
+                transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (-moveSpeed * Time.deltaTime, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
+            else if(Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (moveSpeed * Time.deltaTime, 0);
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+            }
+            else if(Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (0, moveSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if(Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.position = new Vector2 (transform.position.x, transform.position.y) + new Vector2 (0, -moveSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 0, 180);
             }
         }
     }
