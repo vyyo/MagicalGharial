@@ -19,7 +19,7 @@ public class Fan : MonoBehaviour
 
     [SerializeField] Animator animator;
 
-    [SerializeField] bool hater = false;
+    [SerializeField] public bool hater = false;
 
     void Awake()
     {
@@ -29,6 +29,10 @@ public class Fan : MonoBehaviour
             maxWetness = 0;
             currentWetness = 0;
         }
+    }
+    void Start()
+    {
+        
         UpdateAnimation();
     }
 
@@ -95,7 +99,7 @@ public class Fan : MonoBehaviour
         }
     }
 
-    void UpdateAnimation()
+    public void UpdateAnimation()
     {
         if(hater == false)
         {
