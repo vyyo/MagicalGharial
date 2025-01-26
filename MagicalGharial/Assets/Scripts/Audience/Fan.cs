@@ -15,6 +15,8 @@ public class Fan : MonoBehaviour
     [SerializeField] float dryingTime = 10;
     float dryingTimer;
 
+    [SerializeField] float wetnessSpeedDenominator = 5;
+
     [SerializeField] Animator animator;
 
     [SerializeField] bool hater = false;
@@ -72,9 +74,12 @@ public class Fan : MonoBehaviour
         }
         if(other.CompareTag("Player") && hater)
         {
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             other.gameObject.GetComponentInParent<Player>().hasSnacked = true;
             Destroy(gameObject, 0.1f);
+        }
+        if(other.CompareTag("Speed"))
+        {
+            other.gameObject.GetComponentInParent<Player>().moveSpeed = other.gameObject.GetComponentInParent<Player>().moveSpeed + currentWetness/wetnessSpeedDenominator;
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -82,6 +87,10 @@ public class Fan : MonoBehaviour
         if(other.CompareTag("Bubble"))
         {
             underBubble = false;
+        }
+        if(other.CompareTag("Speed"))
+        {
+            other.gameObject.GetComponentInParent<Player>().moveSpeed = other.gameObject.GetComponentInParent<Player>().moveSpeed - currentWetness/wetnessSpeedDenominator;
         }
     }
 

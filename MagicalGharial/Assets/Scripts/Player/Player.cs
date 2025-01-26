@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     Animator animator;
     //Move
     Vector2 move;
-    [SerializeField] float moveSpeed = 3;
+    public float moveSpeed = 1;
     //Combo Sequence Vars
     [SerializeField] float comboResetTimer = 1;
     float comboTimer;
