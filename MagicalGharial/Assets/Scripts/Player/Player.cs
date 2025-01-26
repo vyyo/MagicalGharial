@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     Animator animator;
     //Move
     Vector2 move;
-    public float moveSpeed = 1;
+    [SerializeField] float baseSpeed;
+    [HideInInspector] public float moveSpeed = 1;
     //Combo Sequence Vars
     [SerializeField] float comboResetTimer = 1;
     float comboTimer;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
     {
         if(walking == false)
         {
+            moveSpeed = baseSpeed;
             if(canMove)
             {
                 animator.Play("player_dance");

@@ -297,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
   audioClip: {fileID: 8300000, guid: c70f8437d5bf6d742b61ddf3749def37, type: 3}
+  baseSpeed: 1
   moveSpeed: 1
   comboResetTimer: 1
   maxComboSize: 5
