@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class PhaseSwapTimer : MonoBehaviour
 {
     float remainingTime;
-    [SerializeField] float phaseDuration;
+    [SerializeField] float bubblePhaseDuration;
+    [SerializeField] float snackPhaseDuration;
+    float currentPhaseDuration;
 
     [SerializeField] Image timerImage;
     [SerializeField] Player player;
@@ -15,7 +17,8 @@ public class PhaseSwapTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        remainingTime = phaseDuration;
+        remainingTime = bubblePhaseDuration;
+        currentPhaseDuration = bubblePhaseDuration;
     }
 
     // Update is called once per frame
@@ -23,35 +26,38 @@ public class PhaseSwapTimer : MonoBehaviour
     {
         if(player.hasSnacked)
         {
-            player.hasSnacked = false;
-            remainingTime = phaseDuration;
+            //player.hasSnacked = false;
+            currentPhaseDuration = bubblePhaseDuration;
+            remainingTime = currentPhaseDuration;
             player.walking = false;
             player.transform.position = bubblePos.transform.position;
             player.transform.rotation = bubblePos.transform.rotation;
         }
         if (remainingTime <= 0)
         {
-            remainingTime = phaseDuration;
             player.walking = !player.walking;
             player.currentComboSequence.Clear();
             if(player.walking == false)
             {
+                currentPhaseDuration = bubblePhaseDuration;
                 player.transform.position = bubblePos.transform.position;
                 player.transform.rotation = bubblePos.transform.rotation;
             }
             else
             {
+                currentPhaseDuration = snackPhaseDuration;
                 player.transform.position = walkPos.transform.position;
                 if(player.canMove == false)
                 {
                     player.PopCall();
                 }
             }
+            remainingTime = currentPhaseDuration;
         }
         else
         {
             remainingTime -= Time.deltaTime;
         }
-        timerImage.fillAmount = remainingTime/phaseDuration;
+        timerImage.fillAmount = remainingTime/currentPhaseDuration;
     }
 }

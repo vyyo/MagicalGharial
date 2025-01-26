@@ -11,20 +11,7 @@ public class HaterManager : MonoBehaviour
     List<Fan> fans = new List<Fan>();
     void Awake()
     {
-        foreach(Transform obj in transform)
-        {
-            foreach(Transform obj2 in obj)
-            {
-                if(obj2.GetComponent<Fan>() != null)
-                {
-                    fans.Add(obj2.GetComponent<Fan>());
-                }
-            }
-            if(obj.GetComponent<Fan>() != null)
-            {
-                fans.Add(obj.GetComponent<Fan>());
-            }
-        }
+        PopulateFans();
     }
     // Start is called before the first frame update
     void Start()
@@ -47,13 +34,34 @@ public class HaterManager : MonoBehaviour
             {
                 GenerateHater();
             }
+            player.hasSnacked = false;
         }
     }
 
     void GenerateHater()
     {
+        PopulateFans();
         int randomFan = Random.Range(0, fans.Count);
         fans[randomFan].hater = true;
         fans[randomFan].UpdateAnimation();
+    }
+
+    void PopulateFans()
+    {
+        fans.Clear();
+        foreach(Transform obj in transform)
+        {
+            foreach(Transform obj2 in obj)
+            {
+                if(obj2.GetComponent<Fan>() != null)
+                {
+                    fans.Add(obj2.GetComponent<Fan>());
+                }
+            }
+            if(obj.GetComponent<Fan>() != null)
+            {
+                fans.Add(obj.GetComponent<Fan>());
+            }
+        }
     }
 }

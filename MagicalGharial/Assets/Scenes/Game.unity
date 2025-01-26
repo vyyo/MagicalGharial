@@ -6040,6 +6040,14 @@ PrefabInstance:
       propertyPath: bubblePos
       value: 
       objectReference: {fileID: 1932576044}
+    - target: {fileID: 3003917366259384927, guid: 81538ede39b058241bd834cc1a01784e, type: 3}
+      propertyPath: snackPhaseDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003917366259384927, guid: 81538ede39b058241bd834cc1a01784e, type: 3}
+      propertyPath: bubblePhaseDuration
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5913843980215165093, guid: 81538ede39b058241bd834cc1a01784e, type: 3}
       propertyPath: m_Name
       value: PhaseSwapTimer

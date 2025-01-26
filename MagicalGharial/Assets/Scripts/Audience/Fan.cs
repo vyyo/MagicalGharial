@@ -95,7 +95,10 @@ public class Fan : MonoBehaviour
         }
         if(other.CompareTag("Speed"))
         {
-            other.gameObject.GetComponentInParent<Player>().moveSpeed = other.gameObject.GetComponentInParent<Player>().moveSpeed - currentWetness/wetnessSpeedDenominator;
+            if(other != null)
+            {
+                other.gameObject.GetComponentInParent<Player>().moveSpeed = other.gameObject.GetComponentInParent<Player>().moveSpeed - currentWetness/wetnessSpeedDenominator;
+            }
         }
     }
 
