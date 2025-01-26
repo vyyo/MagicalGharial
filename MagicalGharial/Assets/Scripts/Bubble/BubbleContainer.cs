@@ -7,6 +7,7 @@ public class BubbleContainer : MonoBehaviour
     float moveSpeed = 1;
     float upSpeed = 1;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] ParticleSystem bubbleParticle;
 
     void Update()
     {
@@ -43,6 +44,8 @@ public class BubbleContainer : MonoBehaviour
 
     public void Pop()
     {
-        Destroy(gameObject, 0.1f);
+        spriteRenderer.sprite = null;
+        bubbleParticle.Play();
+        Destroy(gameObject, 0.5f);
     }
 }
